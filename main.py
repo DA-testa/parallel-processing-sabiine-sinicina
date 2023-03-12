@@ -3,7 +3,8 @@
 def parallel_processing(n, m, data):
     output = []
     processors = [(0, i) for i in range(n)]
-    for task in data:
+    for i in range(m):
+        task = data[i]
         next_processor = min(processors)[1]
         output.append((next_processor, processors[next_processor][0]))
         processors[next_processor] = (processors[next_processor][0] + task, next_processor)
